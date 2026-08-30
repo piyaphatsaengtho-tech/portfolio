@@ -10,6 +10,13 @@
     --color-pop: #911a1d;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-text);
+}
+
 body {
     margin: 0;
     background-color: var(--color-background);
@@ -33,44 +40,72 @@ h3 {
     color: inherit;
 }
 
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 32px;
+    color: var(--color-background);
 }
 
 nav p {
     margin: 0;
+    font-weight: 700;
 }
 
 .hero-content {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
 .hero-mapping,
-.hero-photo,
 .hero-intro {
     flex: 1;
     padding: 32px;
 }
 
 .hero-mapping {
-    margin: 4px 0;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    padding-right: 0;
+}
+
+.hero-mapping p {
+    width: 280px;
+    display: grid;
+    grid-template-columns: 90px 20px 1fr;
+    column-gap: 8px;
+    margin: 4px 0;
+}
+
+.hero-mapping p span:first-child {
+    text-align: right;
+}
+
+.hero-mapping p span:nth-child(2) {
+    text-align: center;
+}
+
+.hero-mapping p span:last-child {
+    text-align: left;
 }
 
 .hero-photo {
+    flex: 0 0 140px;
+    height: 160px;
+    min-height: 0;
+    padding: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 280px;
-
     background-color: var(--color-accent);
 }
 
@@ -102,7 +137,7 @@ nav p {
     color: var(--color-text);
 }
 
-#home {
+main > section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 64px 32px;
@@ -119,4 +154,154 @@ nav p {
     background-color: var(--color-accent);
     padding: 0 8px;
     font-family: monospace;
+}
+
+#journey h2 {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+#journey h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.journey-point {
+    position: relative;
+    height: 24px;
+    margin-bottom: 16px;
+}
+
+.journey-point::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-pop);
+
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.journey-point::after {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: calc(100% + 20px);
+    height: 2px;
+
+    transform: translateY(-50%);
+
+    background-color: var(--color-pop);
+}
+
+#journey li:last-child .journey-point::after {
+    display: none;
+}
+
+.journey-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 160px;
+    margin-bottom: 24px;
+    background-color: var(--color-accent);
+}
+
+#journey ol {
+    display: flex;
+    gap: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+#journey li {
+    flex: 1;
+}
+
+#journey p {
+    line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 0.9rem;
+    }
+
+    #home h1 {
+        font-size: 2.75rems;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-mapping {
+        align-items: center;
+    }
+    .hero-photo {
+        flex: 0 0 auto;
+        width: 140px;
+        height: 160px;
+    }
+
+    #journey h3 {
+        text-align: left;
+    }
+    #journey ol {
+        flex-direction: column;
+        gap: 32px;
+    }
+    #journey li {
+        padding-left: 32px;
+        position: relative;
+    }
+    #journey li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+
+        top: 12px;
+        left: 12px;
+
+        transform: translateX(-50%);
+
+        width: 2px;
+        height: calc(100% + 32px);
+        
+        background-color: var(--color-pop);
+    }
+    
+    .journey-point {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 24px;
+        height: 24px;
+
+        margin-bottom: 0;
+    }
+    .journey-point::after {
+        display: none;
+    }
+
+    
 }
