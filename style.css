@@ -1,33 +1,62 @@
 
+
+/* ======== GLOBAL & VARIABLES =================================== */
 * {
     box-sizing: border-box;
 }
 
 :root {
-    --color-background: #fffdf8;
-    --color-text: #572013;
-    --color-accent: #d3e6f7;
-    --color-pop: #911a1d;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: var(--color-text);
+    --color-background: white;
+    --color-text: black;
+    --color-accent: #fff9d9;
+    --color-pop: #ba0a04;
 }
 
 body {
     margin: 0;
     background-color: var(--color-background);
     color: var(--color-text);
-    font-family: Arial, sans-serif;
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
 }
 
 h1,
 h2,
-h3 {
-    font-family: georgia, serif;
+h3,
+.projects-intro .section-label,
+.project-tagline {
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+}
+
+.code-word,
+.project-number,
+.project-flow dt,
+.project-tools h4,
+.project-link,
+.section-label,
+#journey li::marker,
+.hero-mapping p span:last-child {
+    font-family: "JetBrains Mono", monospace;
+}
+
+.words-word,
+.hero-mapping p span:first-child {
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+}
+
+main > section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 32px;
+}
+
+
+/* ======== NAVIGATION ============================================ */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-background);
 }
 
 .nav-links {
@@ -48,8 +77,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 32px;
-    color: var(--color-background);
+    padding: 16px 32px 6px;
+    color: var(--color-text);
 }
 
 nav p {
@@ -57,36 +86,42 @@ nav p {
     font-weight: 700;
 }
 
+
+
+/* ======== HOME / HERO =========================================== */
+
 .hero-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .hero-mapping,
 .hero-intro {
     flex: 1;
-    padding: 32px;
+    min-width: 0;
+    padding: 0;
 }
 
 .hero-mapping {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
-    padding-right: 0;
+    font-size: 1.15rem;
 }
 
 .hero-mapping p {
-    width: 280px;
+    width: 100%;
+    max-width: 320px;
     display: grid;
-    grid-template-columns: 90px 20px 1fr;
+    grid-template-columns: 110px 24px 1fr;
     column-gap: 8px;
-    margin: 4px 0;
+    margin: 6px 0;
 }
 
 .hero-mapping p span:first-child {
     text-align: right;
+    font-size: 1.1em;
 }
 
 .hero-mapping p span:nth-child(2) {
@@ -99,26 +134,39 @@ nav p {
 
 .hero-photo {
     flex: 0 0 140px;
+    width: 140px;
     height: 160px;
-    min-height: 0;
-    padding: 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: var(--color-accent);
 }
 
 .hero-intro {
     display: flex;
     align-items: center;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.hero-intro p {
+    width: 100%;
+    max-width: 360px;
+    margin: 0;
+}
+
+.intro-emphasis {
+    font-size: 1.15em;
+    font-weight: 500;
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 32px;
 }
 
 .hero-actions a {
@@ -137,29 +185,43 @@ nav p {
     color: var(--color-text);
 }
 
-main > section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 64px 32px;
-}
+
 
 #home h1 {
     text-align: center;
-    font-size: 4rem;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 500;
+    line-height: 1;
     margin-top: 0;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+    word-spacing: 0.3em;
+}
+
+.connector-word {
+    font-weight: 400;
+}
+
+.words-word {
+    font-family: "Schoolbell", cursive;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 .code-word {
     background-color: var(--color-accent);
     padding: 0 8px;
-    font-family: monospace;
 }
 
+
+/* ======== JOURNEY =============================================== */
 #journey h2 {
-    font-size: 3rem;
+    font-size: 5.5rem;
+    line-height: 0.9;
     margin-top: 0;
     margin-bottom: 48px;
+    text-transform: uppercase;
+    text-align: right;
 }
 
 #journey h3 {
@@ -236,6 +298,325 @@ main > section {
 }
 
 
+/* ======== PROJECTS ============================================== */
+#projects h2 {
+    font-size: 9rem;
+    line-height: 0.9;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.section-label {
+    margin: 0 0 12px;
+    color: var(--color-pop);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+#projects .section-intro {
+    max-width: 500px;
+    margin: 0;
+    padding-left: 20px;
+    border-left: 2px solid var(--color-pop);
+    line-height: 1.5;
+    text-align: left;
+}
+
+.projects-intro {
+    width: 520px;
+    margin: 0 0 64px;
+}
+
+.projects-intro .section-label {
+    margin: 0 0 12px;
+    color: var(--color-text);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.project-card {
+    display: flex;
+    align-items: stretch;
+    gap: 96px;
+}
+
+.project-visual {
+    flex: 0.85;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 360px;
+    background-color: var(--color-accent);
+}
+
+.flashcard-visual {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    border: 1px solid currentColor;
+    background-color: var(--color-background);
+}
+
+.flashcard-visual::before,
+.flashcard-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border: 1px solid currentColor;
+    background-color: var(--color-accent);
+    z-index: -1;
+}
+
+.flashcard-visual::before {
+    transform: translate(-14px, 14px) rotate(-2deg);
+}
+
+.flashcard-visual::after {
+    transform: translate(14px, 22px) rotate(2deg);
+}
+
+.project-card-reverse {
+    flex-direction: row-reverse;
+}
+
+.receipt-info .project-heading {
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.receipt-info .project-number {
+    font-size: 4.75rem;
+}
+
+.receipt-info .project-heading h3 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+.receipt-info .project-tagline {
+    text-align: center;
+}
+
+.receipt-info .project-description p {
+    position: relative;
+    padding-left: 32px;
+}
+
+.receipt-info .project-description p::before {
+    content: "✓";
+
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background-color: var(--color-pop);
+    color: var(--color-background);
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.receipt-info .project-tagline,
+.receipt-info .project-description,
+.receipt-info .project-tools {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed currentColor;
+}
+
+.receipt-info .project-flow {
+    margin-top: 24px;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.receipt-info .project-flow dd {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.project-info {
+    flex: 1.15;
+}
+
+.project-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.project-heading h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.project-heading h3 span {
+    display: block;
+}
+
+.project-number {
+    color: var(--color-pop);
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.project-tagline {
+    margin: 12px 0 24px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.project-description {
+    line-height: 1.5;
+}
+
+.project-description p {
+    margin: 0 0 16px;
+}
+
+.project-description p:last-child {
+    margin-bottom: 0;
+}
+
+.project-flow {
+    display: flex;
+    gap: 16px;
+    margin: 32px 0 24px;
+    padding-top: 16px;
+    border-top: 1px solid currentColor;
+}
+
+.project-flow > div {
+    flex: 1;
+    border-top: 0;
+    padding-top: 0;
+}
+
+.project-flow dt {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--color-pop);
+    color: var(--color-background);
+    text-transform: uppercase;
+    
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.project-flow dd {
+    margin: 8px 0 0;
+}
+
+.project-flow ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.project-tools {
+    margin-top: 28px;
+}
+
+.project-tools h4 {
+    margin: 0 0 16px;
+    font-size: 1.15rem;
+    color: var(--color-pop);
+    letter-spacing: 0.04em;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.project-tags li {
+    padding: 6px 10px;
+    border: 1px solid currentColor;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 0;
+    padding: 10px 16px;
+    border: 1px solid currentColor;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.project-link span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+    background-color: var(--color-text);
+    color: var(--color-pop);
+}
+
+.project-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ======== RESPONSIVE — TABLET ================================== */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 28px;
+        text-align: center;
+    }
+    .hero-mapping,
+    .hero-intro {
+        width: 100%;
+        padding: 0;
+    }
+    .hero-mapping {
+        align-items: center;
+    }
+    .hero-photo {
+        flex: 0 0 auto;
+        width: 140px;
+        height: 160px;
+    }
+    .hero-intro {
+        justify-content: center;
+    }
+    .hero-intro p {
+        max-width: 520px;
+    }
+}
+
+
+/* ======== RESPONSIVE — MOBILE ================================== */
 @media (max-width: 768px) {
     nav {
         padding: 12px 16px;
@@ -247,20 +628,7 @@ main > section {
     }
 
     #home h1 {
-        font-size: 2.75rems;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-mapping {
-        align-items: center;
-    }
-    .hero-photo {
-        flex: 0 0 auto;
-        width: 140px;
-        height: 160px;
+        font-size: 2.75rem;
     }
 
     #journey h3 {
@@ -288,7 +656,7 @@ main > section {
         
         background-color: var(--color-pop);
     }
-    
+
     .journey-point {
         position: absolute;
         top: 0;
@@ -303,5 +671,23 @@ main > section {
         display: none;
     }
 
-    
+    .project-card,
+    .project-card-reverse {
+        flex-direction: column;
+        gap: 40px;
+    }
+    #projects h2 {
+        font-size: clamp(3.25rem, 16.5vw, 5rem);
+        line-height: 0.95;
+        white-space: nowrap;
+    }
+    .projects-intro {
+        width: 100%;
+    }
+    #projects .section-intro {
+        max-width: 100%;
+    }
+    .projects-list {
+        gap: 88px;
+    }
 }

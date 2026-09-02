@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pleng | From Words to Code</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Schoolbell&amp;display=swap" rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,7 +33,14 @@
 
     <main>
         <section id="home">
-            <h1>From Words to <span class="code-word">[Code]</span></h1>
+            <h1>
+                <span class="connector-word">From</span>
+                <span class="words-word">Words</span><br>
+
+                <span class="connector-word">to</span>
+                <span class="code-word">[Code]</span>
+            </h1>
+
             <div class="hero-content">
                 <div class="hero-mapping">
                     <p>
@@ -51,8 +66,11 @@
 
                 <div class="hero-intro">
                     <p>
-                        I studied German to understand people.<br>
-                        Now I’m learning programming [the language of computers]
+                        I studied <span class="intro-emphasis">German </span>
+                        to understand people.<br>
+                        <br>
+                        Now I’m learning programming<br>
+                        <span class="intro-emphasis">[ the language of computers ]</span><br>
                         to build things for people.
                     </p>
                 </div>
@@ -138,6 +156,175 @@
 
         <section id="projects">
             <h2>Projects</h2>
+
+            <div class="projects-intro">
+                <p class="section-label">Things I've Built</p>
+
+                <p class="section-intro">
+                    Small projects built to learn, 
+                    then improved to become more useful.
+                </p>
+            </div>
+
+            <div class="projects-list">
+                <article class="project-card">
+                    <div class="project-visual flashcard-visual">
+                        Project preview
+                    </div>
+
+                    <div class="project-info">
+                        
+                        <div class="project-heading">
+                            <span class="project-number">01</span>
+                            <h3>
+                                <span>German</span> 
+                                <span>Flashcards</span>
+                            </h3>
+                        </div>
+
+                        <p class="project-tagline">
+                            Turning something familiar into a programming project.
+                        </p>
+
+                        <div class="project-description">
+                            <p>
+                                I built German Flashcards because I wanted my programming 
+                                practice to connect with something I already knew and could use.
+                            </p>
+
+                            <p>
+                                Building the quiz system taught me how to think through program 
+                                logic step by step. This was also the project where functions 
+                                started to feel more natural to me.
+                            </p>
+                        </div>
+
+                        <div class="project-tools">
+                            <h4>// Concepts &amp; Tools</h4>
+
+                            <ul class="project-tags">
+                                <li>Python</li>
+                                <li>Functions</li>
+                                <li>OOP</li>
+                                <li>File Handling</li>
+                            </ul>
+                        </div>
+
+                        <dl class="project-flow">
+                            <div>
+                                <dt>Input</dt>
+                                <dd>German vocabulary</dd>
+                            </div>
+                            
+                            <div>
+                                <dt>Process</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Functions</li>
+                                        <li>Quiz logic</li>
+                                        <li>Score system</li>
+                                        <li>OOP</li>
+                                    </ul>
+                                </dd>
+                            </div>
+                            
+                            <div>
+                                <dt>Output</dt>
+                                <dd>A program for practising German vocabulary</dd>
+                            </div>
+                        </dl>
+
+                        <a 
+                            class="project-link"
+                            href="https://github.com/piyaphatsaengtho-tech/python_projects/blob/main/09_german_flashcards_oop.py"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Code <span>→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card project-card-reverse">
+                    <div class="project-visual">
+                        Project preview
+                    </div>
+
+                    <div class="project-info receipt-info">
+                        
+                        <div class="project-heading">
+                            <span class="project-number">02</span>
+                            <h3>
+                                <span>Shopping List &amp;</span>
+                                <span>Budget Estimator</span>
+                            </h3>
+                        </div>
+
+                        <p class="project-tagline">
+                            Turning a small project into something more useful.
+                        </p>
+
+                        <div class="project-description">
+                            <p>
+                                I revisited a simple shopping list and asked 
+                                how I could make it more useful in everyday life.
+                            </p>
+
+                            <p>
+                                The budget feature was inspired by a real-life problem: 
+                                planning what to buy when you have a limited budget. 
+                                The program estimates the total shopping cost and 
+                                compares it with the available budget.
+                            </p>
+                        </div>
+
+                        <div class="project-tools">
+                            <h4>// Concepts &amp; Tools</h4>
+
+                            <ul class="project-tags">
+                                <li>Python</li>
+                                <li>OOP</li>
+                                <li>Input Validation</li>
+                                <li>Pickle</li>
+                                <li>Data Persistence</li>
+                            </ul>
+                        </div>
+
+                        <dl class="project-flow">
+                            <div>
+                                <dt>Input</dt>
+                                <dd>A basic shopping list</dd>
+                            </div>
+                            
+                            <div>
+                                <dt>Process</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Price</li>
+                                        <li>Quantity</li>
+                                        <li>Budget comparison</li>
+                                        <li>Data persistence</li>
+                                    </ul>
+                                </dd>
+                            </div>
+                            
+                            <div>
+                                <dt>Output</dt>
+                                <dd>A tool for estimating costs before shopping</dd>
+                            </div>
+                        </dl>
+
+                        <a 
+                            class="project-link"
+                            href="https://github.com/piyaphatsaengtho-tech/python_projects/blob/main/03_shopping_list.py"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Code <span>→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section id="evolution">
